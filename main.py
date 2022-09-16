@@ -26,11 +26,12 @@ class Entries:
         self.parent_window = parent_window
 
     # adding of new entry (добавление нового текстового поля)
-    def add_entry(self):
+    def add_entry(self, entry_text=''):
         new_entry = Entry(self.parent_window)
         new_entry.icursor(0)
         new_entry.focus()
         new_entry.pack()
+        new_entry.insert(0, entry_text)
         plot_button = self.parent_window.get_button_by_name('plot')
         if plot_button:
             plot_button.pack_forget()
